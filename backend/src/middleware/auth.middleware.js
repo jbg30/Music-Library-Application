@@ -1,12 +1,9 @@
 import { clerkClient } from "@clerk/express";
 
-// Checks if user is logged in
 export const protectRoute = async (req, res, next) => {
     if (!req.auth.userId) {
-        res.status(401).json({ message: " - you must be logged in" });
-        return
+        return res.status(401).json({ message: " Unauthorized - you must be logged in" });
     }
-
     next();
 };
 
@@ -20,5 +17,7 @@ export const requireAdmin = async (req, res, next) => {
         }
 
         next();
-    } catch (error) {}
+    } catch (error) {
+        next(error)
+    }
 };
