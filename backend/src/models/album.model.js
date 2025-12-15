@@ -13,7 +13,7 @@ export const albumSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    releasreYear: {
+    releaseYear: {
         type: Number,
         required: true,
     },
