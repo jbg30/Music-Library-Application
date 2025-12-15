@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { SignedIn } from "@clerk/clerk-react";
 import PlaylistSkeleton from "@/components/skeletons/PlaylistSkeleton";
-
+import { ScrollArea } from "@radix-ui/react-scroll-area";
 const LeftSidebar = () => {
     const isLoading = true;
     return (
@@ -15,11 +15,12 @@ const LeftSidebar = () => {
                     <Link 
                         to={"/"}
                         className={cn(
-                            buttonVariants({
+                            buttonVariants(
+                                {
                                 variant: "ghost",
                                 className: "w-full justify-start text-white hover:bg-zinc-800",
-                            })
-                        )}
+                            }
+                        ))}
                     >
                         <HomeIcon className="mr-2 size-5" />
                         <span className="hidden md:inline">Home</span>
@@ -51,18 +52,13 @@ const LeftSidebar = () => {
                     </div>
                 </div>
 
-                {/* Scrollable area for playlists */}
-                <div className="h-[calc(100vh-300px)] overflow-y-auto">
+                <ScrollArea className="h-[calc(100vh-300px)]">
                     <div className="space-y-2">
-                        {isLoading ? (
-                            <PlaylistSkeleton />
-                        ) : (
-                            "some music" 
-                        )}
+                        {isLoading ? <PlaylistSkeleton /> : "some music" }
                     </div>
+                    </ScrollArea>
                 </div>
             </div>
-        </div>
     );
 };
 
