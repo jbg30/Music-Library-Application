@@ -5,7 +5,10 @@ import fileUpload from "express-fileupload";
 import path from "path";
 import cors from "cors";
 import cron from "node-cron";
+import { createServer } from "http";
 import fs from "fs";
+
+import {initializeSocket } from "./lib/socket.js";
 
 import { connectDB } from "./lib/db.js";
 import userRoutes from "./routes/user.route.js";
@@ -20,6 +23,9 @@ dotenv.config();
 const __dirname = path.resolve();
 const app = express();
 const PORT = process.env.PORT;
+
+const httpServer = createServer(app);
+initializeSocket(httpServer);
 
 app.use(
     cors({
@@ -76,9 +82,7 @@ app.use((err, req, res, next) => {
 });
 
 
-app.listen(PORT, () => {
+httpServer.listen(PORT, () => {
     console.log("Server is running on port " + PORT);
     connectDB();
 });
-
-// todo: socket.io
