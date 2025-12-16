@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { LayoutDashboardIcon } from "lucide-react";
 import SignInOAuthButtons from "./SignInOAuthButtons";
-import { SignedIn, SignedOut, SignOutButton, UserButton } from "@clerk/clerk-react";
+import {  SignedOut,  UserButton } from "@clerk/clerk-react";
 import { useAuthStore } from "@/stores/useAuthStore";
 import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils"; // Add this import
@@ -35,9 +35,8 @@ const Topbar = () => {
                     <SignInOAuthButtons />
                 </SignedOut>
 
-                <SignedIn>
                     <UserButton />
-                </SignedIn>
+                
             </div>
         </div>
     );

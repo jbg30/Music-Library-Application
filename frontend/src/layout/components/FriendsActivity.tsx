@@ -1,4 +1,4 @@
-import { useChatStore } from "@/stores/useChatStores";
+import { useChatStore } from "@/stores/useChatStore";
 import { HeadphonesIcon, Music, Users } from "lucide-react";
 import { useEffect } from "react";
 import { useUser } from "@clerk/clerk-react";
