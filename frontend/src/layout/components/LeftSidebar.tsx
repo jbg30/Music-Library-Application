@@ -1,5 +1,5 @@
 import { buttonVariants } from "@/components/ui/button";
-import { HomeIcon, MessageCircle, Library } from "lucide-react";
+import { HomeIcon, /*MessageCircle,*/ Library } from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { SignedIn } from "@clerk/clerk-react";
@@ -38,8 +38,8 @@ const LeftSidebar = () => {
                     </Link>
                     
                     <SignedIn>
-                        <Link
-                            to={"/chat"}
+                        {/* <Link
+                             to={"/chat"}
                             className={cn(
                                 buttonVariants({
                                     variant: "ghost",
@@ -48,8 +48,8 @@ const LeftSidebar = () => {
                             )}
                         >
                             <MessageCircle className="mr-2 size-5" />
-                            <span className="hidden md:inline">Messages</span>
-                        </Link>
+                            <span className="hidden md:inline">Messages</span> 
+                        </Link> */}
                     </SignedIn>
                 </div>
             </div>

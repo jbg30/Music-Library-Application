@@ -3,7 +3,7 @@ import { HeadphonesIcon, Music, Users } from "lucide-react";
 import { useEffect } from "react";
 import { useUser } from "@clerk/clerk-react";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const FriendsActivity = () => {
     const { users, fetchUsers } = useChatStore();
@@ -34,11 +34,11 @@ const FriendsActivity = () => {
                             className="cursor-pointer hover:bg-zinc-800/50 p-3 rounded-md transition-colors group">
                         <div className="flex items-start gap-3">
                             <div className="relative">
-                                <Avatar className="size-10 border border-zinc-800">
+                                <Avatar className="size-6 border border-zinc-800">
                                     <AvatarImage src={user.imageUrl} alt={user.fullName} />
                                     <AvatarFallback>{user.fullName[0]}</AvatarFallback>
                                 </Avatar>
-                                <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-zinc-900 bg-zinc-500" 
+                                <div className="absolute bottom-0 right-0 h-2 w-2 rounded-full border-2 border-zinc-900 bg-zinc-500" 
                                     aria-hidden="true"
                                 />
                                 </div>

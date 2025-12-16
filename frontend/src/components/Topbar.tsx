@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
-import { LayoutDashboardIcon } from "lucide-react";
+// import { Link } from "react-router-dom";
+// import { LayoutDashboardIcon } from "lucide-react";
 import SignInOAuthButtons from "./SignInOAuthButtons";
 import {  SignedOut,  UserButton } from "@clerk/clerk-react";
 import { useAuthStore } from "@/stores/useAuthStore";
-import { buttonVariants } from "./ui/button";
-import { cn } from "@/lib/utils"; // Add this import
+// import { buttonVariants } from "./ui/button";
+// import { cn } from "@/lib/utils"; // Add this import
 
 const Topbar = () => {
     const { isAdmin } = useAuthStore();
@@ -18,7 +18,7 @@ const Topbar = () => {
             </div>
             
             <div className="flex items-center gap-4">
-                {isAdmin && (
+                {/* {isAdmin && (
                     <Link 
                         to="/admin"
                         className={cn(
@@ -29,7 +29,7 @@ const Topbar = () => {
                         <LayoutDashboardIcon className="size-4 mr-2" />
                         Admin Dashboard
                     </Link>
-                )}
+                )} */}
 
                 <SignedOut>
                     <SignInOAuthButtons />
